@@ -15,14 +15,6 @@ window.onload = async function () {
     channelLinkElement.href = link;
     channelLinkElement.innerText = "Open Channel";
 
-    document.body.appendChild(channelLinkElement);
-
-    // window.alert("Redirecting to channel..." + startParam);
-
-    channelLinkElement.click();
-
-    document.body.removeChild(channelLinkElement);
-
     // Close the window
     window.Telegram.WebApp.onEvent("viewportChanged", function () {
       window.Telegram.WebApp.expand();
@@ -38,6 +30,14 @@ window.onload = async function () {
         window.Telegram.WebApp.close();
       }, 3000);
     });
+
+    document.body.appendChild(channelLinkElement);
+
+    // window.alert("Redirecting to channel..." + startParam);
+
+    channelLinkElement.click();
+
+    document.body.removeChild(channelLinkElement);
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
