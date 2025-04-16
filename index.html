@@ -4085,7 +4085,15 @@
         // redirectLinkElement.innerText = "Redirecting to: " + link;
         // document.body.appendChild(redirectLinkElement);
 
-        window.Telegram.WebApp.openTelegramLink(link);
+        // window.Telegram.WebApp.openTelegramLink(link);
+        const channelLinkElement = document.createElement("a");
+        channelLinkElement.href = link;
+        channelLinkElement.target = "_blank";
+        channelLinkElement.innerText = "Open Channel";
+        document.body.appendChild(channelLinkElement);
+
+        channelLinkElement.click();
+
         // window.Telegram.WebApp.close();
       } else {
         // Handle case when start_param is not found in the dictionary
