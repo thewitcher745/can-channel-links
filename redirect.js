@@ -1,9 +1,5 @@
 window.onload = function () {
-  // Define the dictionary of key-value pairs (link IDs to target URLs)
-  const linkDictionary = {
-    CAN_Algo: "https://t.me/+6V6xxWEXw25kOTk0",
-    Cryptoboard: "https://t.me/+dmQd0WWdqCc1NjBk",
-  };
+  const linkDictionary = require("./links.json");
 
   // Get the start_param from URL parameters
   const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
