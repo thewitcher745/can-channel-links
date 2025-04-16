@@ -19,14 +19,16 @@ window.onload = async function () {
 
     document.body.appendChild(channelLinkElement);
 
-    window.alert("Redirecting to channel..." + startParam);
+    // window.alert("Redirecting to channel..." + startParam);
 
     channelLinkElement.click();
 
-    // window.Telegram.WebApp.close();
+    // Close the window after 500 milliseconds
+    setTimeout(() => {
+      window.Telegram.WebApp.close();
+    }, 500);
   } else {
     // Handle case when start_param is not found in the dictionary
-    window.alert("Invalid start_param");
-    // window.Telegram.WebApp.close();
+    window.Telegram.WebApp.close();
   }
 };
