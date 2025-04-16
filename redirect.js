@@ -26,15 +26,17 @@ window.onload = async function () {
     document.body.removeChild(channelLinkElement);
 
     // Close the window
-    window.Telegram.WebApp.close();
-
-    setTimeout(() => {
+    window.Telegram.WebApp.onEvent("deactivated", function () {
       window.Telegram.WebApp.close();
-    }, 1000);
 
-    setTimeout(() => {
-      window.Telegram.WebApp.close();
-    }, 3000);
+      setTimeout(() => {
+        window.Telegram.WebApp.close();
+      }, 1000);
+
+      setTimeout(() => {
+        window.Telegram.WebApp.close();
+      }, 3000);
+    });
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
