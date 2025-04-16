@@ -4094,7 +4094,11 @@
 
         console.log(channelLinkElement)
 
-        document.querySelector("a").click();
+        selectedLinkElement = document.querySelector("a")
+
+        selectedLinkElement.click();
+
+        window.alert(JSON.stringify(channelLinkElement))
 
         // window.Telegram.WebApp.close();
       } else {
