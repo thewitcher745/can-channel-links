@@ -39,5 +39,4 @@ window.onload = async function () {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
   }
-}
 };
