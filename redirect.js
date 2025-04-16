@@ -3,6 +3,8 @@ window.onload = async function () {
   const response = await fetch("./links.json");
   const linkDictionary = await response.json();
 
+  console.log(linkDictionary);
+
   // Get the start_param from URL parameters
   const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
   const startParam = urlParams.get("start_param");
@@ -17,11 +19,14 @@ window.onload = async function () {
 
     document.body.appendChild(channelLinkElement);
 
+    window.alert("Redirecting to channel..." + startParam);
+
     channelLinkElement.click();
 
-    window.Telegram.WebApp.close();
+    // window.Telegram.WebApp.close();
   } else {
     // Handle case when start_param is not found in the dictionary
-    window.Telegram.WebApp.close();
+    window.alert("Invalid start_param");
+    // window.Telegram.WebApp.close();
   }
 };
