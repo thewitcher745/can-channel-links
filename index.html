@@ -1,0 +1,51 @@
+<!--
+    Simple static Telegram WebApp. Does not verify the WebAppInitData, as a bot token would be needed for that.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Redirecting to link...</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+  </head>
+  <script type="text/javascript">
+    window.onload = function () {
+      // Define the dictionary of key-value pairs (link IDs to target URLs)
+      const linkDictionary = {
+        CAN_Algo: "https://t.me/+6V6xxWEXw25kOTk0",
+        Cryptoboard: "https://t.me/+dmQd0WWdqCc1NjBk",
+      };
+
+      // Get the start_param from URL parameters
+      const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
+      const startParam = urlParams.get("start_param");
+
+      // Navigate to the corresponding link if it exists in the dictionary
+      if (startParam && linkDictionary[startParam]) {
+        const link = linkDictionary[startParam];
+        const redirectLinkElement = document.createElement("div");
+        redirectLinkElement.innerText = "Redirecting to: " + link;
+        document.body.appendChild(redirectLinkElement);
+
+        window.Telegram.WebApp.openTelegramLink(link);
+        window.alert("Redirecting to: " + link);
+      } else {
+        // Handle case when start_param is not found in the dictionary
+        window.alert("Invalid start_param");
+        window.Telegram.WebApp.close();
+      }
+    };
+  </script>
+  <body style="background-color: #ffffff">
+    <div style="text-align: center; margin-top: 20px">
+      <h3>Redirecting...</h3>
+    </div>
+  </body>
+  <script type="text/javascript">
+    Telegram.WebApp.expand();
+  </script>
+</html>
