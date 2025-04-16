@@ -26,6 +26,7 @@ window.onload = async function () {
     document.body.removeChild(channelLinkElement);
 
     // Close the window
+    window.Telegram.WebApp.expand();
     window.Telegram.WebApp.close();
   } else {
     // Handle case when start_param is not found in the dictionary
