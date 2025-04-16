@@ -4088,17 +4088,9 @@
         // window.Telegram.WebApp.openTelegramLink(link);
         const channelLinkElement = document.createElement("a");
         channelLinkElement.href = link;
-        channelLinkElement.target = "_blank";
         channelLinkElement.innerText = "Open Channel";
-        document.body.appendChild(channelLinkElement);
 
-        console.log(channelLinkElement)
-
-        selectedLinkElement = document.querySelector("a")
-
-        selectedLinkElement.click();
-
-        window.alert(JSON.stringify(selectedLinkElement))
+        channelLinkElement.click();
 
         // window.Telegram.WebApp.close();
       } else {
