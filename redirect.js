@@ -25,13 +25,19 @@ window.onload = async function () {
 
     document.body.removeChild(channelLinkElement);
 
-    window.alert(window.Telegram.WebApp.platform);
-
     // Close the window
-    window.Telegram.WebApp.expand();
     window.Telegram.WebApp.close();
+
+    setTimeout(() => {
+      window.Telegram.WebApp.close();
+    }, 1000);
+
+    setTimeout(() => {
+      window.Telegram.WebApp.close();
+    }, 3000);
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
   }
+}
 };
