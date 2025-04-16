@@ -28,12 +28,15 @@ window.onload = async function () {
     // Close the window
     window.Telegram.WebApp.onEvent("deactivated", function () {
       window.Telegram.WebApp.close();
+      window.Telegram.WebApp.expand();
 
       setTimeout(() => {
+        window.Telegram.WebApp.expand();
         window.Telegram.WebApp.close();
       }, 1000);
 
       setTimeout(() => {
+        window.Telegram.WebApp.expand();
         window.Telegram.WebApp.close();
       }, 3000);
     });
