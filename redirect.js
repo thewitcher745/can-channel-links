@@ -26,7 +26,7 @@ window.onload = async function () {
     // Close the window after 500 milliseconds
     setTimeout(() => {
       window.Telegram.WebApp.close();
-    }, 500);
+    }, 1000);
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
