@@ -21,7 +21,7 @@ window.onload = function () {
 
     channelLinkElement.click();
 
-    // window.Telegram.WebApp.close();
+    window.Telegram.WebApp.close();
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
