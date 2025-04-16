@@ -1,5 +1,7 @@
-window.onload = function () {
-  const linkDictionary = require("./links.json");
+window.onload = async function () {
+  // Define the dictionary of key-value pairs (link IDs to target URLs)
+  const response = await fetch("./links.json");
+  const linkDictionary = await response.json();
 
   // Get the start_param from URL parameters
   const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
