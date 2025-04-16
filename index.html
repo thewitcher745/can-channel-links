@@ -4081,18 +4081,14 @@
       // Navigate to the corresponding link if it exists in the dictionary
       if (startParam && linkDictionary[startParam]) {
         const link = linkDictionary[startParam];
-        // const redirectLinkElement = document.createElement("div");
-        // redirectLinkElement.innerText = "Redirecting to: " + link;
-        // document.body.appendChild(redirectLinkElement);
-
-        // window.Telegram.WebApp.openTelegramLink(link);
+        
         const channelLinkElement = document.createElement("a");
         channelLinkElement.href = link;
         channelLinkElement.innerText = "Open Channel";
 
         channelLinkElement.click();
 
-        // window.Telegram.WebApp.close();
+        window.Telegram.WebApp.close();
       } else {
         // Handle case when start_param is not found in the dictionary
         window.Telegram.WebApp.close();
