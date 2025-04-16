@@ -15,20 +15,14 @@ window.onload = async function () {
     channelLinkElement.href = link;
     channelLinkElement.innerText = "Open Channel";
 
-    // Close the window
+    // Close the window when it is deactivated or the user tries to maximize it (in the edge cases when it doesn't close)
     window.Telegram.WebApp.onEvent("viewportChanged", function () {
       window.Telegram.WebApp.expand();
       window.Telegram.WebApp.close();
-
-      setTimeout(() => {
-        window.Telegram.WebApp.expand();
-        window.Telegram.WebApp.close();
-      }, 1000);
-
-      setTimeout(() => {
-        window.Telegram.WebApp.expand();
-        window.Telegram.WebApp.close();
-      }, 3000);
+    });
+    window.Telegram.WebApp.onEvent("deactivated", function () {
+      window.Telegram.WebApp.expand();
+      window.Telegram.WebApp.close();
     });
 
     document.body.appendChild(channelLinkElement);
