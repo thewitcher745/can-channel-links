@@ -29,10 +29,7 @@ window.onload = async function () {
 
     // window.alert("Redirecting to channel..." + startParam);
 
-    // channelLinkElement.click();
-
-    // Navigate to the link through the address bar
-    window.location.href = link;
+    channelLinkElement.click();
 
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.close();
