@@ -17,6 +17,8 @@ window.onload = function () {
     channelLinkElement.href = link;
     channelLinkElement.innerText = "Open Channel";
 
+    document.body.appendChild(channelLinkElement);
+
     channelLinkElement.click();
 
     // window.Telegram.WebApp.close();
