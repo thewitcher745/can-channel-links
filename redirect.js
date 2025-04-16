@@ -3,8 +3,6 @@ window.onload = async function () {
   const response = await fetch("./links.json");
   const linkDictionary = await response.json();
 
-  console.log(linkDictionary);
-
   // Get the start_param from URL parameters
   const urlParams = new URLSearchParams(window.Telegram.WebApp.initData);
   const startParam = urlParams.get("start_param");
@@ -26,7 +24,10 @@ window.onload = async function () {
     document.body.removeChild(channelLinkElement);
 
     // Close the window
-    window.Telegram.WebApp.onEvent("deactivated", function () {
+    window.Telegram.WebApp.onEvent("viewportChanged", function () {
+      window.Telegram.WebApp.expand();
+      window.Telegram.WebApp.close();
+
       setTimeout(() => {
         window.Telegram.WebApp.expand();
         window.Telegram.WebApp.close();
