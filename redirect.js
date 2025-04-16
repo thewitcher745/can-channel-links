@@ -25,6 +25,8 @@ window.onload = async function () {
 
     document.body.removeChild(channelLinkElement);
 
+    window.alert(window.Telegram.WebApp.platform);
+
     // Close the window
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.close();
