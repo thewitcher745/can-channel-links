@@ -23,10 +23,10 @@ window.onload = async function () {
 
     channelLinkElement.click();
 
-    // Close the window after 500 milliseconds
-    setTimeout(() => {
-      window.Telegram.WebApp.close();
-    }, 1000);
+    document.body.removeChild(channelLinkElement);
+
+    // Close the window
+    window.Telegram.WebApp.close();
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
