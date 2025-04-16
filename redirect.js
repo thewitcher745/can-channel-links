@@ -31,7 +31,9 @@ window.onload = async function () {
 
     // channelLinkElement.click();
 
-    window.Telegram.WebApp.openTelegramLink(link);
+    // Navigate to the link through the address bar
+    window.location.href = link;
+
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.close();
 
