@@ -17,11 +17,11 @@ window.onload = async function () {
 
     // Close the window when it is deactivated or the user tries to maximize it (in the edge cases when it doesn't close)
     window.Telegram.WebApp.onEvent("viewportChanged", function () {
-      window.Telegram.WebApp.expand();
+      //   window.Telegram.WebApp.expand();
       //   window.Telegram.WebApp.close();
     });
     window.Telegram.WebApp.onEvent("deactivated", function () {
-      window.Telegram.WebApp.expand();
+      //   window.Telegram.WebApp.expand();
       //   window.Telegram.WebApp.close();
     });
 
@@ -31,13 +31,12 @@ window.onload = async function () {
 
     channelLinkElement.click();
 
-    window.Telegram.WebApp.expand();
+    // window.Telegram.WebApp.expand();
     // window.Telegram.WebApp.close();
 
     document.body.removeChild(channelLinkElement);
 
-    window.Telegram.WebApp.expand();
-    // window.Telegram.WebApp.close();
+    window.close();
   } else {
     // Handle case when start_param is not found in the dictionary
     window.Telegram.WebApp.close();
