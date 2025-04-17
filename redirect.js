@@ -15,30 +15,20 @@ window.onload = async function () {
     channelLinkElement.href = link;
     channelLinkElement.innerText = "Open Channel";
 
-    // Close the window when it is deactivated or the user tries to maximize it (in the edge cases when it doesn't close)
+    // Close the window when the user tries to maximize it (in the edge cases when it doesn't close)
     window.Telegram.WebApp.onEvent("viewportChanged", function () {
-      //   window.Telegram.WebApp.expand();
-      //   window.Telegram.WebApp.close();
-    });
-    window.Telegram.WebApp.onEvent("deactivated", function () {
-      //   window.Telegram.WebApp.expand();
-      //   window.Telegram.WebApp.close();
+      window.Telegram.WebApp.close();
     });
 
     document.body.appendChild(channelLinkElement);
 
-    // window.alert("Redirecting to channel..." + startParam);
-
     channelLinkElement.click();
-
-    // window.Telegram.WebApp.expand();
-    // window.Telegram.WebApp.close();
 
     document.body.removeChild(channelLinkElement);
 
     window.close();
   } else {
     // Handle case when start_param is not found in the dictionary
-    window.Telegram.WebApp.close();
+    window.close();
   }
 };
